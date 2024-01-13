@@ -1,0 +1,91 @@
+
+This project database is SQL-lite
+https://www.youtube.com/watch?v=rRVWQCpZ_CI&t=12360s
+https://pypi.org/search/?q=django
+
+
+Install Python ( Where) add to path
+check python active ==> Typing idle will lead to python shell   / if typing python is black color
+C:\Users\Lenovo>pip -V
+pip 23.1.2 from C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pip (python 3.10)
+check  pip -v  ( In main workspec must be install python )
+
+sandbox is  virtualenv
+pip install virtualenv
+สร้าง Folder  ของ website
+cd >> folderwebsite  python -m virtualenv venv(Name)
+python -m virtualenv name of virtual env.
+C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung>python -m virtualenv venv
+C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung> 
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung>pip install django
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung>
+
+..............................................................................................................................................................................................................................................................
+Project  who_witaya
+App Home
+........................................................................
+
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung\who_witaya\who_witaya>cd..
+
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung\who_witaya>python manage.py startapp home
+
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung\who_witaya>python manage.py runserver
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung\who_witaya>python manage.py migrate
+( if migrate mean use sqllite)
+
+before create superuser must be db first
+
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung\who_witaya> python manage.py createsuperuser
+Username (leave blank to use 'lenovo'): admin
+Email address: witayachai@gmail.com
+Password:  12345678
+Password (again):
+This password is too common.
+This password is entirely numeric.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+............................................................................
+MVT concept 
+
+
+Step by Step
+1.create venv / Create Project  who_iswitaya , create app home 
+2.python manage.py migrate  if use sqllite 
+3.Create super user ( if no database will error)
+4.copy main urls to app urls
+5.install app home in setting.py  'home'
+6.import include  
+
+    Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    from django.contrib import admin
+     from django.urls import path,include
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('home.urls'))   ## home.urls is whole app
+]
+
+7.Test hello world  with http respond , def home in views.py of app  and url pattern of app
+  from .views import *   //* หมายถึงเอามาทุก function ใน views
+
+8.How to create Template 
+create template in app and Create folder home in template , create home.html  ( copy code มาเลยเเล้วมาเเก้ linl) //Test web ใน come ==main ที่เรา copy มา
+config folder tenplate .....
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR/'home/template'],
+
+        old version is ===> [os.path.join(BASE_DIR,"template")]
+        change views from httprespond to render
+        def HOME(request):
+        return render(request ,'home/home.html')
+
+
+
+
+9.How to add image in the project   or more css file      
