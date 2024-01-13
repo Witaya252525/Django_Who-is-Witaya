@@ -55,7 +55,7 @@ ROOT_URLCONF = 'who_witaya.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR,"home/template"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
