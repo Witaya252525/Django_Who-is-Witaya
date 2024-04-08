@@ -1,0 +1,56 @@
+Install Python ( Where) add to path
+check python active ==> Typing idle will lead to python shell   / if typing python is black color
+https://pypi.org/search/?q=django
+C:\Users\Lenovo>pip -V
+pip 23.1.2 from C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pip (python 3.10)
+check  pip -v
+sandbox = virtualenv
+pip install virtualenv
+สร้าง Folder  ของ website
+cd folder python -m virtualenv venv(Name)
+python -m virtualenv name of virtual env.
+
+Born to dev Create folder /cd in folder_name  and  python -m --pip install --upgrade pip  for update  python on folder_name // next step is install virtual env // still stay in old folder typing virtualenv  -p python Project_name create virtual environment 
+cd new Project name (Project-name) infront path  then acticate ....  ==>  .\Scripts\activate    ......จะได้ pip /setuptools/wheel  ...>>> pip install django /after installed test django-admin will see package  //   django-admin   startproject  store .  ( Activate Project_name)   
+python manage.py runserver
+
+
+
+
+C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung>cd..
+C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung>.\venv\scripts\activate
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung>pip install django
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung>
+
+..............................................................................................................................................................................................................................................................
+Project  who_witaya
+App Home
+........................................................................
+
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung\who_witaya\who_witaya>cd..
+
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung\who_witaya>python manage.py startapp home
+
+(venv) C:\Users\Lenovo\OneDrive\WEBDEVELOP2023\Django_Lung\who_witaya>python manage.py runserver
+
+
+
+
+C:\Users\Lenovo\OneDrive\GitHub 2024>python -m virtualenv venv
+created virtual environment CPython3.10.1.final.0-64 in 12014ms
+  creator CPython3Windows(dest=C:\Users\Lenovo\OneDrive\GitHub 2024\venv, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\Lenovo\AppData\Local\pypa\virtualenv)
+    added seed packages: pip==23.2.1, setuptools==68.1.2, wheel==0.41.2
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+C:\Users\Lenovo\OneDrive\GitHub 2024>.\venv\scripts\activate
+
+(venv) C:\Users\Lenovo\OneDrive\GitHub 2024>
+
+
+
+`bigquery-public-data.austin_crime.crime`
+
+SELECT unique_key from  `bigquery-public-data.austin_crime.crime` LIMIT 1000
+
+
