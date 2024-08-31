@@ -13,6 +13,8 @@ def Service(request):
 
 
 def Contact(request):
+
+    context = {}
     if request.method == 'POST':
         data = request.POST.copy()
         title = data.get('title')
@@ -27,7 +29,8 @@ def Contact(request):
         new.email = email
         new.detail = detail
         new.save()
+        context[ 'status'] = 'sucess'
 
-    return render(request, 'home/contact.html')
+    return render(request, 'home/contact.html' ,context)
 
  #   return HttpResponse (' <h1>Hi witaya</h1>' )
