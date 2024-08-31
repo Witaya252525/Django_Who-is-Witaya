@@ -1,41 +1,49 @@
-{% extends "home/base.html" %} 
-{% load static %} 
+{% extends "home/base.html" %} {% load static %} {% block title %} Contact
+{%endblock title %} {%block content%} 
 
 
-{% block title %} Contact {%endblock title %}
+{%if status %} {% if status == 'sucess' %}
+<div class="alert alert-primary" role="alert">
+  Thank you for you input!
+</div>
+{% else %}
 
 
-{%block content%}
-{%if status %} ได้รับข้อมูลเเล้ว {%endid%}
+<div class="alert alert-dark" role="alert">
+  Please try again
+</div>
 
 
+
+{% endif %} 
+
+{% endif %}
 
 <div class="container">
-  
   <form method="POST">
-    
-    
-    
     <div class="form-group">
-      {% csrf_token %} 
+      {% csrf_token %}
       <label for="title">สอบถามหัวข้อ</label>
-      <input type="text" name="title" id="title"  class ="form-control"/>
+      <input type="text" name="title" id="title" class="form-control" />
     </div>
-    
+
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" name="email" id="email"  class = "form-control"/>
+      <input type="text" name="email" id="email" class="form-control" />
     </div>
 
     <div class="form-group">
       <label for="detail">Details</label>
-      <textarea  class = "form-control"   row ="5"  name="detail" id="detail" ></textarea>
+      <textarea
+        class="form-control"
+        row="5"
+        name="detail"
+        id="detail"
+      ></textarea>
     </div>
-      <br>
-     <button type = "submit"   class = "btn btn-primary">Submit</button>
-     <button type = "reset"   class = "btn btn-danger">Reset</button>
-
-
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-danger">Reset</button>
   </form>
 </div>
 {%endblock content%}

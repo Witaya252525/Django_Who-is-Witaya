@@ -22,6 +22,9 @@ def Contact(request):
         detail = data.get('detail')
 
         print(title, email, detail)
+        if email == '' or title == '' :
+            context[ 'status'] = 'alert'
+            return render(request, 'home/contact.html' ,context)
 
         # add data into database
         new = ContactMessage()
